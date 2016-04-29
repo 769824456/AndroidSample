@@ -35,7 +35,7 @@ public class UITestActivityTest {
 
     ///////////////////////////////////////////////////////////////////////////
     //教程：https://io2015codelabs.appspot.com/codelabs/android-studio-testing#8
-    //
+    //官方Demo:https://github.com/googlesamples/android-testing
     ///////////////////////////////////////////////////////////////////////////
     private static String STRING_TO_BE_TYPED = "Peter";
 
