@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     public void init() {
-        String[]             str     = {"handler1", "handler2"};
+        String[]             str     = {"handler1", "handler2","UITest"};
         List<String>         mDatas  = Arrays.asList(str);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1, mDatas);
         lv.setAdapter(adapter);

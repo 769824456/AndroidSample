@@ -80,7 +80,7 @@ public class Handler2Activity extends AppCompatActivity {
     // 1。在子线程中不能更新UI，但是可以弹出土司
     //  解释：
     //      Toast内部有new了一个Handler,没有给Looper。但是Looper默认构造方法中没有指定线程的话，直接用的是当前线程的Looper
-    //      所以，show土司的时候post内容当ui了，所以能更新ui
+    //      所以，show土司的时候post内容到ui了，所以能更新ui
     ///////////////////////////////////////////////////////////////////////////
 
 
