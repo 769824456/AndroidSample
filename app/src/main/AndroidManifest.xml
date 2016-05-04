@@ -20,7 +20,8 @@
         <activity android:name=".handler.Handler2Activity">
         </activity>
         <activity android:name=".test.UITestActivity">
-
+        </activity>
+        <activity android:name=".okhttp.OkHttpUtilsActivity">
         </activity>
     </application>
 
