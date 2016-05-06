@@ -13,6 +13,8 @@ import java.util.List;
 
 import win.yulongsun.androidsample.handler.Handler1Activity;
 import win.yulongsun.androidsample.handler.Handler2Activity;
+import win.yulongsun.androidsample.superadapter.SuperAdapterListViewActivity;
+import win.yulongsun.androidsample.superadapter.SuperAdapterRVActivity;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
@@ -28,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     public void init() {
-        String[]             str     = {"handler1", "handler2","UITest"};
+        String[]             str     = {"handler1", "handler2","UITest","SuperAdapterListView","SuperAdapterRV"};
         List<String>         mDatas  = Arrays.asList(str);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1, mDatas);
         lv.setAdapter(adapter);
@@ -44,6 +46,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 break;
             case 1:
                 intent = new Intent(this, Handler2Activity.class);
+                break;
+            case 3://SuperAdapterListView
+                intent = new Intent(this, SuperAdapterListViewActivity.class);
+                break;
+            case 4://SuperAdapterRV
+                intent = new Intent(this, SuperAdapterRVActivity.class);
                 break;
         }
         if (intent != null) {
