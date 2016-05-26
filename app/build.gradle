@@ -37,4 +37,5 @@ dependencies {
     /*superadapter*/
     compile 'org.byteam.superadapter:superadapter:3.1@aar'
     compile 'com.android.support:recyclerview-v7:23.1.1'
+    compile project(':lib_uikit')
 }

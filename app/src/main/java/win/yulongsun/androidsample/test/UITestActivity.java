@@ -1,10 +1,14 @@
 package win.yulongsun.androidsample.test;
 
 import android.app.Activity;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 import win.yulongsun.androidsample.R;
 
