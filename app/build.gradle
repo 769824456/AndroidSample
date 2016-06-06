@@ -1,4 +1,3 @@
-
 apply plugin: 'com.android.application'
 
 android {
@@ -13,29 +12,49 @@ android {
         versionName "1.0"
         //ADD THIS LINE:
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        //ndk
+        ndk{
+            moduleName 'jni-test'
+            abiFilters 'armeabi','armeabi-v7a',"x86"
+        }
+        sourceSets.main{
+            jni.srcDirs = []
+            jniLibs.srcDir "src/main/libs"
+        }
+
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+        debug {
+            debuggable true
+            jniDebuggable true
+        }
     }
     dexOptions {
         incremental true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
     }
 }
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    testCompile 'junit:junit:4.12'
     // App's dependencies, including test
-    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
-    androidTestCompile 'com.android.support.test:runner:0.5'
-    compile 'com.android.support:support-annotations:23.1.1'
-    compile 'com.android.support:appcompat-v7:23.1.1'
     compile project(':okhttputils')
     /*superadapter*/
+    compile project(':lib_uikit')
+    compile 'com.android.support:support-annotations:23.1.1'
+    compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'org.byteam.superadapter:superadapter:3.1@aar'
     compile 'com.android.support:recyclerview-v7:23.1.1'
-    compile project(':lib_uikit')
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha1'
+    testCompile 'junit:junit:4.12'
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
+    androidTestCompile 'com.android.support.test:runner:0.5'
 }

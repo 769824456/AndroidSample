@@ -14,6 +14,7 @@ import java.util.List;
 import win.yulongsun.androidsample.edittext.EditTextActivity;
 import win.yulongsun.androidsample.handler.Handler1Activity;
 import win.yulongsun.androidsample.handler.Handler2Activity;
+import win.yulongsun.androidsample.jni.JNIActivity;
 import win.yulongsun.androidsample.superadapter.SuperAdapterListViewActivity;
 import win.yulongsun.androidsample.superadapter.SuperAdapterRVActivity;
 import win.yulongsun.androidsample.test.UITestActivity;
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     public void init() {
-        String[]             str     = {"handler1", "handler2","UITest","SuperAdapterListView","SuperAdapterRV","EditText","WebViewSample","ViewSampleActivity"};
+        String[]             str     = {"handler1", "handler2","UITest","SuperAdapterListView","SuperAdapterRV","EditText","WebViewSample","ViewSampleActivity","JNIActivity"};
         List<String>         mDatas  = Arrays.asList(str);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1, mDatas);
         lv.setAdapter(adapter);
@@ -68,6 +69,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 break;
             case 7:
                 intent = new Intent(this, ViewSampleActivity.class);
+                break;
+            case 8:
+                intent = new Intent(this, JNIActivity.class);
                 break;
         }
         if (intent != null) {
